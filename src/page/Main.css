@@ -28,6 +28,21 @@ body {
     url("../images/airplane.jpg") no-repeat;
   background-size: cover;
   background-position: center;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.main .container::after {
+  /* 오버레이 스타일 */
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.2); /* 반투명 검정색 오버레이 */
+  z-index: -1;
 }
 
 .main .container .header {
@@ -67,6 +82,7 @@ body {
   margin: 4px 2px;
   transition-duration: 0.4s;
   cursor: pointer;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* 버튼에 그림자 추가 */
 }
 
 /* 효진, 홍민, 선애, 유빈 버튼 호버 스타일 수정 */
@@ -76,12 +92,13 @@ body {
 .main .container .nav ul li:nth-child(4) button:hover {
   background-color: transparent;
   color: rgba(192, 88, 23, 0.8); /* Darker Green */
+  transform: scale(1.05); /* 호버 시 버튼이 약간 커지는 효과 */
 }
 
 .main .container .hero {
   position: relative;
   left: 50%;
-  top: 50%;
+  top: 45%;
   transform: translate(-50%, -50%);
   color: white;
   text-align: center;
@@ -91,10 +108,12 @@ body {
 .main .container .hero h2 {
   font-size: 50px;
   margin-bottom: 20px; /* 이전에는 230px이었습니다. */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 텍스트 그림자 추가 */
 }
 
 .main .container .hero p {
   margin-top: 20px; /* 새로운 p 태그의 위치를 조정합니다. */
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* 텍스트 그림자 추가 */
 }
 
 .main .container .hero .btn {
@@ -109,10 +128,12 @@ body {
   outline: none;
   cursor: pointer;
   transition: all 0.4s;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* 버튼에 그림자 추가 */
 }
 
 .main .container .hero .btn:hover {
   background-color: rgb(113, 64, 35);
+  box-shadow: 0 0 15px rgba(0, 212, 255, 0.6); /* 버튼 호버 시 그림자 강조 */
 }
 
 .main .container .hero .typing-text {
@@ -131,13 +152,19 @@ body {
 }
 
 .main .person-description {
+  /* 기존 스타일 유지 */
   position: absolute;
-  top: 50%;
+  top: 80%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.85); /* 배경색을 약간 더 어둡게 조정 */
   padding: 20px;
   border-radius: 10px;
   color: white;
   text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 요소에 그림자 추가 */
+  width: 90%; /* 너비를 viewport에 맞추어 조정 */
+  max-width: 600px; /* 최대 너비 설정 */
+  border: 1px solid #61dafb; /* 경계선 색상을 리액트의 테마 색상으로 설정 */
+  transition: transform 0.3s ease-in-out; /* 부드러운 위치 변화 효과 */
 }

@@ -1,11 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Domestic.css";
 
 function Domestic() {
   const [currentPerson, setCurrentPerson] = useState("");
   const [showDescription, setShowDescription] = useState(false);
   const videoRef = useRef(null); // useRef 훅을 사용하여 video 요소에 대한 참조 생성
+
 
   useEffect(() => {
     accessWebcam(); // 컴포넌트가 마운트될 때 웹캠에 접근
@@ -98,6 +99,9 @@ function Domestic() {
     setShowDescription(true);
     setTimeout(() => setShowDescription(false), 5000);
   };
+
+
+
 
   return (
     <div className="domestic">

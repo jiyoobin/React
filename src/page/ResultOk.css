@@ -1,0 +1,198 @@
+/* font폴더 안에 abster폰트 적용 */
+@font-face {
+    font-family: abster;
+    src: url('../font/abster-webfont.woff') format("woff");
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #363636;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  .main .container {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+      url("../images/airplane.jpg") no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+  }
+  
+  .main .container::after {
+    /* 오버레이 스타일 */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2); /* 반투명 검정색 오버레이 */
+    z-index: -1;
+  }
+  
+  .main .container .header {
+    width: 80%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .main .container .header h1 a {
+    text-decoration: none;
+    color: white;
+    font-family: abster;
+  }
+  
+  .main .container .nav ul li {
+    display: inline-block;
+    margin: 0 10px;
+  }
+  
+  /* 효진, 홍민, 선애, 유빈 버튼 스타일 수정 */
+  .main .container .nav ul li:nth-child(1) button,
+  .main .container .nav ul li:nth-child(2) button,
+  .main .container .nav ul li:nth-child(3) button,
+  .main .container .nav ul li:nth-child(4) button {
+    
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 0px 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* 버튼에 그림자 추가 */
+  }
+  
+  /* 효진, 홍민, 선애, 유빈 버튼 호버 스타일 수정 */
+  .main .container .nav ul li:nth-child(1) button:hover,
+  .main .container .nav ul li:nth-child(2) button:hover,
+  .main .container .nav ul li:nth-child(3) button:hover,
+  .main .container .nav ul li:nth-child(4) button:hover {
+    background-color: transparent;
+    color: rgba(192, 88, 23, 0.8); /* Darker Green */
+    transform: scale(1.05); /* 호버 시 버튼이 약간 커지는 효과 */
+  }
+  
+  .main .container .hero {
+    position: relative;
+    left: 50%;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  
+  .main .container .hero h2 {
+    font-size: 50px;
+    margin-bottom: 20px; /* 이전에는 230px이었습니다. */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 텍스트 그림자 추가 */
+  }
+  
+  .main .container .hero p {
+    margin-top: 20px; /* 새로운 p 태그의 위치를 조정합니다. */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* 텍스트 그림자 추가 */
+  }
+  
+  .main .container .hero .btn {
+    margin-top: 100px;
+    /* 버튼 스타일을 추가합니다. */
+    font-size: 13px;
+    background: none;
+    border: 2px solid rgba(192, 88, 23, 0.8);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    transition: all 0.4s;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* 버튼에 그림자 추가 */
+  }
+  
+  .main .container .hero .btn:hover {
+    background-color: rgb(113, 64, 35);
+    box-shadow: 0 0 15px rgba(0, 212, 255, 0.6); /* 버튼 호버 시 그림자 강조 */
+  }
+  
+  .main .container .hero .typing-text {
+    font-family: "Fuzzy Bubbles", sans-serif;
+    color: white;
+    font-size: 1.5rem;
+    border-right: 3px solid white; /* 커서 만들기 */
+    animation: blink 0.5s infinite, typing 2s steps(22);
+    white-space: nowrap;
+    overflow: hidden;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -130px;
+  }
+  
+  .main .person-description {
+    /* 기존 스타일 유지 */
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.85); /* 배경색을 약간 더 어둡게 조정 */
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* 요소에 그림자 추가 */
+    width: 90%; /* 너비를 viewport에 맞추어 조정 */
+    max-width: 600px; /* 최대 너비 설정 */
+    border: 1px solid #61dafb; /* 경계선 색상을 리액트의 테마 색상으로 설정 */
+    transition: transform 0.3s ease-in-out; /* 부드러운 위치 변화 효과 */
+  }
+
+.info-message {
+    position: absolute;
+    bottom: 10%; /* 화면 하단에서 적절한 간격을 두고 배치합니다. */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    font-size: 1.2em; /* 메시지의 글꼴 크기를 조정합니다. */
+  }
+  
+  .info-icon {
+    display: inline-block;
+    width: 50px; /* 아이콘의 크기를 지정합니다. */
+    height: 50px; /* 아이콘의 크기를 지정합니다. */
+    background: url('/path-to-your-icon.png') no-repeat center center; /* 아이콘 이미지 경로를 지정합니다. */
+    background-size: contain;
+    margin-right: 8px; /* 아이콘과 텍스트 사이의 간격을 지정합니다. */
+  }
+  
+  .detail-link {
+    display: block; /* 블록 레벨 요소로 만들어 줄바꿈을 추가합니다. */
+    color: #61dafb; /* 링크의 색상을 지정합니다. */
+    text-decoration: underline; /* 밑줄을 추가하여 링크임을 강조합니다. */
+    margin-top: 10px; /* 메시지와 링크 사이의 간격을 지정합니다. */
+    cursor: pointer;
+  }
+  
